@@ -1,5 +1,5 @@
 import Login from "./pages/Login.jsx";
-//import Register from "./pages/Register.jsx";
+import Register from "./pages/Register.jsx";
 //import AddTaskPage from "./pages/AddTaskPage.jsx";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
 
   return (
     
-    <Login />
-    //<Register />
+    <Login />,
+    <Register />
     //<AddTaskPage />
 
   );

@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from '../img/e-contract.png';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +42,14 @@ const Login = () => {
             Entrar    
             </button>
             <div className="mt-4 text-center flex gap-6">
-            <h2 className="text-white">Não tem uma conta?</h2><a href="/Register" className="text-white underline">Cadastre-se</a>
+            <h2 className="text-white">Não tem uma conta?</h2>
+            <button
+              type="button"
+              className="text-white underline"
+              onClick={() => navigate("/Register")}
+            >
+              Cadastre-se
+            </button>
             </div>
         </form>
       </div>

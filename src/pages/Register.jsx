@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import logo from '../img/e-contract.png';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
 const [name, setName] = useState("");
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [isRegistering, setIsRegistering] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
 const handleRegister = (e) => {
   e.preventDefault();
-  console.log({name, email, password});
+  console.log({name, email, password, confirmPassword});
 }
   return(
 
@@ -49,20 +51,22 @@ const handleRegister = (e) => {
                 <label className=" text-white block">Confirmar senha</label>
                 <input type="password"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 />
             </div>
-            <button type="submit"
+            <button 
+            onClick={() => navigate('/AddTaskPage')}
+            type="submit"
             className=" mt-5 w-full bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-600 transition"
             >
             Cadastrar    
             </button>
             <p 
             className="text-sm text-white cursor-pointer mt-4"
-            onClick={() => setIsRegistering(!isRegistering)}
+            onClick={() => navigate('/Login')}
             >
-            {isRegistering ? "Já tem conta? Faça login!" : "Não tem conta? Cadastre-se!"}
+            Já tem uma conta? <span className="underline">Entrar</span>
             </p>
           </form>
       </div>
