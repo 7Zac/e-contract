@@ -11,13 +11,13 @@ function AddTask({ onAddTaskSubmit }) {
     return (
     <div className="bg-slate-200 p-6 rounded-md shadow flex flex-col gap-4">
         <input type="text" 
-        placeholder="Digite o título da tarefa" 
+        placeholder="Nome" 
         className="border-slate-300 outline-slate-400 px-4 py-2 rounded-md"
         value={title}
         onChange={(event) => setTitle(event.target.value)} />
         
         <input type="text" 
-        placeholder="Digite a descrição da tarefa" 
+        placeholder="CPF do cliente" 
         className="border-slate-300 outline-slate-400 px-4 py-2 rounded-md {!description ? 'border-red-500' : ''}"
         value={description}
         onChange={(event) => setDescription(event.target.value)}/>
@@ -35,7 +35,7 @@ function AddTask({ onAddTaskSubmit }) {
             setDescription("");
         }}
         className="bg-slate-500 text-white px-4 py-2 rounded-md font-medium hover:bg-slate-600 transition-all ">
-        Adicionar
+        Salvar
         </button>
 
     </div>

@@ -7,6 +7,7 @@ import TaskPage from './pages/TaskPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AddTaskPage from './pages/AddTaskPage';
+import CreateConsult from './pages/CreateConsult';
 
 
 const router = createBrowserRouter([
@@ -20,9 +21,14 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/register",
+    path: "/Register",
     element: <Register />,
   },
+  {
+    path: "/CreateConsult",
+    element: <CreateConsult />,
+  },
+
   {
     path: "/AddTaskPage",
     element: <AddTaskPage />,

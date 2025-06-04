@@ -56,7 +56,7 @@ const handleRegister = (e) => {
                 />
             </div>
             <button 
-            onClick={() => navigate('/AddTaskPage')}
+            onClick={() => navigate('/CreateConsult')}
             type="submit"
             className=" mt-5 w-full bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-600 transition"
             >

@@ -36,7 +36,9 @@ const Login = () => {
                 required
                 />
             </div>
-            <button type="submit"
+            <button 
+            onClick={() => navigate("/CreateConsult")}
+            type="submit"
             className=" mt-5 w-full text-white bg-gray-500 py-2 rounded-lg hover:bg-gray-600 transition"
             >
             Entrar    

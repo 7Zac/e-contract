@@ -1,4 +1,4 @@
-import { ChevronRightIcon, Trash2Icon } from "lucide-react";
+import { ChevronRightIcon, Trash2Icon, ChevronLeftIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function Task ({ task, onTaskClick, onDeleteTaskClick }) {
@@ -12,13 +12,14 @@ function Task ({ task, onTaskClick, onDeleteTaskClick }) {
         // Adiciona a descrição da tarefa como um parâmetro de consulta
         query.set("description", task.description);
         // Navega para a página de detalhes da tarefa com os parâmetros de consulta
-        navigate(`/task?${query.toString()}`);
+        navigate (`/TaskPage?${query.toString()}`);
     }
 
     return (
     
     <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
     
+
          {task.map((task) => (
             <li key={task.id} className="flex gap-2" >
             
@@ -37,7 +38,11 @@ function Task ({ task, onTaskClick, onDeleteTaskClick }) {
                 </button>
 
                 <button 
-                onClick={() => onDeleteTaskClick(task.id)}
+                onClick={ () => {
+                if (window.confirm ("Tem certeza que deseja excluir este termo?")) {   
+                    onDeleteTaskClick(task.id);   
+                    }                
+                }}
                 className="bg-slate-400 p-2 text-white rounded-md transition-all duration-2 hover:bg-red-500">
                     <Trash2Icon />
                 </button>
