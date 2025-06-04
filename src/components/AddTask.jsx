@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 function AddTask({ onAddTaskSubmit }) { 
 
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+    const [name, setName] = useState("");
+    const [cpf, setCpf] = useState("");
    
     
 
@@ -13,26 +13,26 @@ function AddTask({ onAddTaskSubmit }) {
         <input type="text" 
         placeholder="Nome" 
         className="border-slate-300 outline-slate-400 px-4 py-2 rounded-md"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)} />
+        value={name}
+        onChange={(event) => setName(event.target.value)} />
         
         <input type="text" 
         placeholder="CPF do cliente" 
-        className="border-slate-300 outline-slate-400 px-4 py-2 rounded-md {!description ? 'border-red-500' : ''}"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}/>
+        className="border-slate-300 outline-slate-400 px-4 py-2 rounded-md {!cpf ? 'border-red-500' : ''}"
+        value={cpf}
+        onChange={(event) => setCpf(event.target.value)}/>
         
         <button 
         onClick={() => {
-            if (!title.trim() || !description.trim()) {   
+            if (!name.trim() || !cpf.trim()) {   
                 return( 
                 alert("Preencha todos os campos")
             );
 
         }
-            onAddTaskSubmit(title, description);
-            setTitle("");
-            setDescription("");
+            onAddTaskSubmit(name, cpf);
+            setName("");
+            setCpf("");
         }}
         className="bg-slate-500 text-white px-4 py-2 rounded-md font-medium hover:bg-slate-600 transition-all ">
         Salvar

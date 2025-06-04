@@ -35,7 +35,9 @@ function CreateConsult(){
                 </button>
                 </div>
             <div>
-                <button className="border-slate-900 border-2 w-[250px] h-[100px] text-slate-900 text-2xl rounded-lg hover:bg-slate-900 hover:text-slate-100 transition">
+                <button 
+                onClick={() => window.location.href = '/ConsultPage'}
+                className="border-slate-900 border-2 w-[250px] h-[100px] text-slate-900 text-2xl rounded-lg hover:bg-slate-900 hover:text-slate-100 transition">
                     Consultar termos
                 </button>
             </div>

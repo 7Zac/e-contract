@@ -29,26 +29,11 @@ function AddTaskPage() {
     //fecthTasks();
   }, []) */
 
-  function onTaskClick(taskId) {
-    const newTask = task.map((task) => {
-      if (task.id === taskId) {
-        return { ...task, isCompleted: !task.isCompleted };
-      }
-      return task;
-    });
-    setTask(newTask);
-  }
-
-  function onDeleteTaskClick(taskId) {
-    const newTask = task.filter((task) => task.id !== taskId);
-    setTask(newTask);
-  }
-
-  function onAddTaskSubmit(title, description) {
+  function onAddTaskSubmit(name, cpf) {
     const newTask = {
       id: v4(),
-      title,
-      description,
+      name,
+      cpf,
       isCompleted: false,
     };
     setTask([...task, newTask]);
@@ -76,12 +61,6 @@ function AddTaskPage() {
 
       <AddTask 
       onAddTaskSubmit={onAddTaskSubmit} />
-      <Task 
-      task={task} 
-      onTaskClick={onTaskClick}
-      onDeleteTaskClick={onDeleteTaskClick}
-      />
-
       </div> 
       </div>     
     </div>
